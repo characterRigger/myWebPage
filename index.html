@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barat Ali - Character Rigger</title>
+    <meta name="description" content="Barat Ali is a professional rigging artist specializing in character rigging for films, commercials, and video games.">
+    <meta name="keywords" content="character rigging, rigging artist, animation, 3D rigging, Barat Ali, films, commercials, video games">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -39,6 +41,7 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
+            scroll-behavior: smooth;
         }
 
         a {
@@ -106,6 +109,7 @@
         .slider img {
             width: 100%;
             display: block;
+            object-fit: cover;
         }
 
         /* About Section */
@@ -149,6 +153,17 @@
             padding: 20px 0;
             box-shadow: 0 -2px 4px var(--box-shadow-color);
         }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: var(--nav-text-color);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--link-hover-color);
+        }
     </style>
 </head>
 <body>
@@ -156,29 +171,36 @@
         <div class="container">
             <div class="logo">Barat Ali</div>
             <div class="menu"></div>
-            <div class="theme-toggle" id="theme-toggle">&#9788;</div>
+            <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</div>
         </div>
     </nav>
-    <section class="slider-container">
-        <div class="slider">
-            <div><img src="Posters/Leo.jpg" alt="Leo"></div>
-            <div><img src="Posters/magicians elephants.jpg" alt="The Magician's Elephant"></div>
-            <div><img src="Posters/love and monsters.jpg" alt="Love and Monsters"></div>
-            <div><img src="Posters/cats.jpg" alt="Cats"></div>
-            <div><img src="Posters/mia and me.jpg" alt="Mia and Me"></div>
-            <div><img src="Posters/bilal.jpg" alt="Bilal"></div>
-        </div>
-    </section>
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am a rigging artist specializing in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
-            <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
-        </div>
-    </section>
+    <main>
+        <section class="slider-container">
+            <div class="slider" aria-label="Image carousel">
+                <div><img src="Posters/Leo.jpg" alt="Leo"></div>
+                <div><img src="Posters/magicians elephants.jpg" alt="The Magician's Elephant"></div>
+                <div><img src="Posters/love and monsters.jpg" alt="Love and Monsters"></div>
+                <div><img src="Posters/cats.jpg" alt="Cats"></div>
+                <div><img src="Posters/mia and me.jpg" alt="Mia and Me"></div>
+                <div><img src="Posters/bilal.jpg" alt="Bilal"></div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I am a rigging artist specializing in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
+                <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="container">
             <p>&copy; 2024 Barat Ali. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
 
