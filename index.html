@@ -206,28 +206,45 @@
 
         .contact h2 {
             font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            font-size: 18px;
+            text-align: center;
             margin-bottom: 40px;
         }
 
-        .contact-info p {
-            margin: 10px 0;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .contact-info a {
-            display: inline-block;
-            margin: 10px 0;
+        .contact-item {
+            background: var(--nav-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--box-shadow-color);
+            transition: transform 0.3s;
+            flex: 1 1 200px;
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
             color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s;
+            font-size: 18px;
+            display: block;
+            margin: 10px 0;
         }
 
-        .contact-info a:hover {
+        .contact-item a:hover {
             color: var(--link-hover-color);
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
         }
 
         .resume-link {
@@ -335,10 +352,22 @@
         <div class="container">
             <h2>Contact</h2>
             <div class="contact-info">
-                <p>Email: <a href="mailto:Helloimbarat@gmail.com">Helloimbarat@gmail.com</a></p>
-                <p>Phone: <a href="tel:+61466834271">+61466834271</a></p>
-                <p>LinkedIn: <a href="https://au.linkedin.com/in/baratrigger" target="_blank">linkedin.com/in/baratrigger</a></p>
-                <p>Showreel: <span>Coming Soon</span></p>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:Helloimbarat@gmail.com">Helloimbarat@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+61466834271">+61466834271</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://au.linkedin.com/in/baratrigger" target="_blank">linkedin.com/in/baratrigger</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-film"></i>
+                    <span>Coming Soon</span>
+                </div>
             </div>
             <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
         </div>
