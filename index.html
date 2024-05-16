@@ -110,7 +110,7 @@
 
         /* About Section */
         .about {
-            padding: 30px 0; /* Reduce top and bottom padding */
+            padding: 30px 0;
             background: var(--background-color);
             color: var(--text-color);
             text-align: center;
@@ -126,139 +126,18 @@
             margin-bottom: 40px;
         }
 
-        .about .skills {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-        }
-
-        .about .skills div {
-            text-align: left;
-        }
-
-        .about .skills h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .about .skills ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .about .skills ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Rigging Toolbox Section */
-        .rigging-toolbox {
-            padding: 60px 0;
-            background: var(--background-color);
-            color: var(--text-color);
-        }
-
-        .rigging-toolbox h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .portfolio-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background: var(--nav-background);
-            color: var(--text-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px var(--box-shadow-color);
-            transition: transform 0.3s;
-            width: calc(16.66% - 20px); /* Adjust width to fit 6 items in a row with gaps */
-            text-align: center;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .portfolio-item p {
-            padding: 20px;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 60px 0;
-            background: var(--background-color);
-            color: var(--text-color);
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .contact-item {
-            background: var(--nav-background);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px var(--box-shadow-color);
-            transition: transform 0.3s;
-            flex: 1 1 200px;
-            text-align: center;
-        }
-
-        .contact-item i {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .contact-item a {
-            color: var(--link-color);
-            font-size: 18px;
-            display: block;
-            margin: 10px 0;
-        }
-
-        .contact-item a:hover {
-            color: var(--link-hover-color);
-        }
-
-        .contact-item:hover {
-            transform: scale(1.05);
-        }
-
         .resume-link {
             display: inline-block;
             margin-top: 20px;
-            background: var(--link-color);
+            background: #007bff; /* fixed background color */
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
-            transition: background 0.3s; /* Removed color transition */
+            transition: background 0.3s;
         }
 
         .resume-link:hover {
-            background: var(--link-hover-color);
+            background: #0056b3; /* fixed hover color */
         }
 
         /* Footer */
@@ -275,8 +154,7 @@
     <nav id="navbar">
         <div class="container">
             <div class="logo">Barat Ali</div>
-            <div class="menu">
-            </div>
+            <div class="menu"></div>
             <div class="theme-toggle" id="theme-toggle">&#9788;</div>
         </div>
     </nav>
