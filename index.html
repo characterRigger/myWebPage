@@ -4,202 +4,349 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barat Ali - Character Rigger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <style>
+        /* Root variables for light mode */
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --nav-background: #fff;
+            --nav-text-color: #333;
+            --link-color: #007bff;
+            --link-hover-color: #0056b3;
+            --box-shadow-color: rgba(0, 0, 0, 0.1);
+            --nav-transparent: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Root variables for dark mode */
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --nav-background: #333;
+            --nav-text-color: #e0e0e0;
+            --link-color: #bb86fc;
+            --link-hover-color: #3700b3;
+            --box-shadow-color: rgba(255, 255, 255, 0.1);
+            --nav-transparent: rgba(51, 51, 51, 0.8);
+        }
+
+        /* Basic Styling */
         body {
             font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-            background-color: #121212;
-            color: #ffffff;
         }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(31, 31, 31, 0.8);
-            color: #fff;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: background 0.3s ease;
-        }
-        nav a {
-            color: #fff;
+
+        a {
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
-            transition: color 0.3s ease;
-            position: relative;
+            color: var(--link-color);
+            transition: color 0.3s;
         }
-        nav a::before {
-            content: '';
-            position: absolute;
+
+        a:hover {
+            color: var(--link-hover-color);
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--nav-background);
+            color: var(--nav-text-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px var(--box-shadow-color);
+            position: fixed;
             width: 100%;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #ff9800;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s, color 0.3s;
         }
-        nav a:hover::before {
-            visibility: visible;
-            transform: scaleX(1);
+
+        nav.transparent {
+            background: var(--nav-transparent);
         }
-        nav a:hover {
-            color: #ff9800;
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav .menu a {
+            margin-left: 20px;
+            font-size: 16px;
+            color: var(--nav-text-color);
+        }
+
+        /* Dark mode toggle button */
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--nav-text-color);
+        }
+
+        /* Slider */
         .slider-container {
             margin-top: 80px;
         }
+
         .slider img {
             width: 100%;
             display: block;
         }
-        .about, .contact {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background: var(--background-color);
+            color: var(--text-color);
             text-align: center;
         }
-        .about h2, .contact h2 {
+
+        .about h2 {
+            font-size: 36px;
             margin-bottom: 20px;
-            font-size: 32px;
-            color: #ff9800;
         }
+
         .about p {
-            margin-bottom: 20px;
             font-size: 18px;
-            line-height: 1.6;
+            margin-bottom: 40px;
         }
-        .about ul {
+
+        .about .skills {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .about .skills div {
+            text-align: left;
+        }
+
+        .about .skills h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about .skills ul {
             list-style: none;
             padding: 0;
         }
-        .about ul li {
-            margin: 10px 0;
+
+        .about .skills ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Rigging Toolbox Section */
+        .rigging-toolbox {
+            padding: 60px 0;
+            background: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .rigging-toolbox h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: var(--nav-background);
+            color: var(--text-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px var(--box-shadow-color);
+            transition: transform 0.3s;
+            width: calc(16.66% - 20px); /* Adjust width to fit 6 items in a row with gaps */
+            text-align: center;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item p {
+            padding: 20px;
+            text-align: center;
             font-size: 16px;
         }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
         }
-        .contact-form input, .contact-form button {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
             margin: 10px 0;
-            border: none;
-            border-radius: 5px;
         }
-        .contact-form input {
-            background: #333;
-            color: #fff;
-        }
-        .contact-form input::placeholder {
-            color: #ccc;
-        }
-        .contact-form button {
-            background: #ff9800;
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .contact-form button:hover {
-            background: #e68a00;
-        }
-        .resume-link {
-            margin-top: 20px;
+
+        .contact-info a {
             display: inline-block;
-            background: #333;
+            margin: 10px 0;
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--link-hover-color);
+        }
+
+        .resume-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--link-color);
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
+            transition: background 0.3s;
         }
+
         .resume-link:hover {
-            background: #444;
+            background: var(--link-hover-color);
         }
+
+        /* Footer */
         footer {
+            background: var(--nav-background);
+            color: var(--nav-text-color);
             text-align: center;
-            padding: 20px;
-            background: #1f1f1f;
-            color: #fff;
-            box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+            padding: 20px 0;
+            box-shadow: 0 -2px 4px var(--box-shadow-color);
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">Barat Ali</div>
+            <div class="menu">
+                <a href="#about">About Me</a>
+                <a href="#rigging-toolbox">Rigging Toolbox</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">&#9788;</div>
+        </div>
     </nav>
     <section class="slider-container">
         <div class="slider">
-            <div><img src="movies/Leo.jpg" alt="Leo"></div>
-            <div><img src="movies/magicians elephants.jpg" alt="The Magician's Elephant"></div>
-            <div><img src="movies/love and monsters.jpg" alt="Love and Monsters"></div>
-            <div><img src="movies/cats.jpg" alt="Cats"></div>
-            <div><img src="movies/mia and me.jpg" alt="Mia and Me"></div>
-            <div><img src="movies/bilal.jpg" alt="Bilal"></div>
+            <div><img src="Posters/Leo.jpg" alt="Leo"></div>
+            <div><img src="Posters/magicians elephants.jpg" alt="The Magician's Elephant"></div>
+            <div><img src="Posters/love and monsters.jpg" alt="Love and Monsters"></div>
+            <div><img src="Posters/cats.jpg" alt="Cats"></div>
+            <div><img src="Posters/mia and me.jpg" alt="Mia and Me"></div>
+            <div><img src="Posters/bilal.jpg" alt="Bilal"></div>
         </div>
     </section>
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I am a rigging artist specializing in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
-        <h3>Rigging Methods:</h3>
-        <ul>
-            <li>Data Centric</li>
-            <li>Live Guidable</li>
-            <li>Procedural</li>
-        </ul>
-        <h3>Scripting Languages:</h3>
-        <ul>
-            <li>Python</li>
-            <li>MEL</li>
-            <li>C++</li>
-        </ul>
-        <h3>Released Movies:</h3>
-        <ul>
-            <li>The Magician's Elephant</li>
-            <li>Love and Monsters</li>
-            <li>Mia and Me</li>
-            <li>Cats</li>
-            <li>Bilal</li>
-            <li>Leo</li>
-        </ul>
-        <h3>Upcoming Movies:</h3>
-        <ul>
-            <li>The Shrinking of the Treehorns</li>
-            <li>Sisters</li>
-        </ul>
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a rigging artist specializing in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
+            <div class="skills">
+                <div>
+                    <h3>Rigging Methods</h3>
+                    <ul>
+                        <li>Data Centric</li>
+                        <li>Live Guidable</li>
+                        <li>Procedural</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Scripting Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>MEL</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="rigging-toolbox" class="rigging-toolbox">
+        <div class="container">
+            <h2>Rigging Toolbox</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_01.jpg" alt="toolbox_01">
+                    <p>toolbox_01</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_02.jpg" alt="toolbox_02">
+                    <p>toolbox_02</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_03.jpg" alt="toolbox_03">
+                    <p>toolbox_03</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_04.jpg" alt="toolbox_04">
+                    <p>toolbox_04</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_05.jpg" alt="toolbox_05">
+                    <p>toolbox_05</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Tool_images/toolbox_06.jpg" alt="toolbox_06">
+                    <p>toolbox_06</p>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <form class="contact-form">
-            <input type="email" placeholder="Your Email" required>
-            <input type="tel" placeholder="Your Phone Number" required>
-            <button type="submit">Contact Me</button>
-        </form>
-        <a href="path/to/your/resume.pdf" class="resume-link" download>Download My Resume</a>
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:Helloimbarat@gmail.com">Helloimbarat@gmail.com</a></p>
+                <p>Phone: <a href="tel:+61466834271">+61466834271</a></p>
+                <p>LinkedIn: <a href="https://au.linkedin.com/in/baratrigger" target="_blank">linkedin.com/in/baratrigger</a></p>
+                <p>Showreel: <span>Coming Soon</span></p>
+            </div>
+            <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
+        </div>
     </section>
     <footer>
-        <p>&copy; 2024 Barat Ali. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Barat Ali. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -233,6 +380,30 @@
                         }
                     }
                 ]
+            });
+
+            // Change navbar to transparent on scroll
+            $(window).scroll(function() {
+                const navbar = $('#navbar');
+                if ($(this).scrollTop() > 50) {
+                    navbar.addClass('transparent');
+                } else {
+                    navbar.removeClass('transparent');
+                }
+            });
+
+            // Toggle dark and light mode
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            toggleButton.addEventListener('click', () => {
+                if (body.hasAttribute('data-theme')) {
+                    body.removeAttribute('data-theme');
+                    toggleButton.innerHTML = '&#9788;'; // Sun icon
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    toggleButton.innerHTML = '&#9790;'; // Moon icon
+                }
             });
         });
     </script>
