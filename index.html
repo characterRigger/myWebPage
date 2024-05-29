@@ -20,18 +20,20 @@
             --link-hover-color: #0056b3;
             --box-shadow-color: rgba(0, 0, 0, 0.1);
             --nav-transparent: rgba(255, 255, 255, 0.8);
+            --logo-highlight-color: yellow; /* Color that pops against white */
         }
 
         /* Dark mode */
         [data-theme="dark"] {
             --background-color: #121212;
             --text-color: #e0e0e0;
-            --nav-background: #333;
+            --nav-background: #1a1a1a; /* Darker color for nav and footer */
             --nav-text-color: #e0e0e0;
             --link-color: #bb86fc;
             --link-hover-color: #3700b3;
             --box-shadow-color: rgba(255, 255, 255, 0.1);
-            --nav-transparent: rgba(51, 51, 51, 0.8);
+            --nav-transparent: rgba(26, 26, 26, 0.8); /* Adjusted for darker background */
+            --logo-highlight-color: yellow; /* Color that pops against dark background */
         }
 
         /* Basic Styling */
@@ -86,6 +88,10 @@
         nav .logo {
             font-size: 40px;
             font-weight: bold;
+        }
+
+        nav .logo .highlight {
+            color: var(--logo-highlight-color);
         }
 
         nav .menu a {
@@ -178,20 +184,15 @@
 <body>
     <nav id="navbar">
         <div class="container">
-            <div class="logo">Barat Ali</div>
+            <div class="logo"><span class="highlight">B</span>A<span class="highlight">R</span>A<span class="highlight">T</span></div>
             <div class="menu"></div>
             <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</div>
         </div>
     </nav>
     <main>
         <section class="slider-container">
-            <div class="slider" aria-label="Image carousel">
-                <div><img src="Posters/Leo.jpg" alt="Leo"></div>
-                <div><img src="Posters/magicians elephants.jpg" alt="The Magician's Elephant"></div>
-                <div><img src="Posters/love and monsters.jpg" alt="Love and Monsters"></div>
-                <div><img src="Posters/cats.jpg" alt="Cats"></div>
-                <div><img src="Posters/mia and me.jpg" alt="Mia and Me"></div>
-                <div><img src="Posters/bilal.jpg" alt="Bilal"></div>
+            <div class="slider" id="posterSlider" aria-label="Image carousel">
+                <!-- Images will be loaded here by JavaScript -->
             </div>
         </section>
         <section id="about" class="about">
@@ -219,35 +220,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
+        // Function to dynamically load images from the Posters directory
+        function loadPosters() {
+            fetch('Posters')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const html = parser.parseFromString(data, 'text/html');
+                    const posters = html.querySelectorAll('a');
+
+                    posters.forEach(poster => {
+                        const href = poster.getAttribute('href');
+                        if (href.endsWith('.jpg') || href.endsWith('.png')) {
+                            const img = document.createElement('img');
+                            img.src = `Posters/${href}`;
+                            img.alt = href.split('.')[0];
+
+                            const div = document.createElement('div');
+                            div.appendChild(img);
+                            document.getElementById('posterSlider').appendChild(div);
+                        }
+                    });
+
+                    // Initialize Slick slider after images are loaded
+                    $('.slider').slick({
+                        dots: true,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        adaptiveHeight: true,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        responsive: [
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 1,
+                                    infinite: true,
+                                    dots: true
+                                }
+                            },
+                            {
+                                breakpoint: 600,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                })
+                .catch(error => console.error('Error loading posters:', error));
+        }
+
         $(document).ready(function(){
-            $('.slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
+            loadPosters();
 
             // Change navbar to transparent on scroll
             $(window).scroll(function() {
