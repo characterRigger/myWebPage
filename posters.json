@@ -1,30 +1,6 @@
 [
     {
-        "src": "Posters/Leo.jpg",
-        "alt": "Leo"
-    },
-    {
-        "src": "Posters/magicians elephants.jpg",
-        "alt": "The Magician's Elephant"
-    },
-    {
-        "src": "Posters/love and monsters.jpg",
-        "alt": "Love and Monsters"
-    },
-    {
-        "src": "Posters/cats.jpg",
-        "alt": "Cats"
-    },
-    {
-        "src": "Posters/mia and me.jpg",
-        "alt": "Mia and Me"
-    },
-    {
-        "src": "Posters/bilal.jpg",
-        "alt": "Bilal"
-    },
-	{
         "src": "Posters/Hero.jpg",
         "alt": "Hero"
-    }
+    },
 ]
