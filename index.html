@@ -220,26 +220,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        // Function to dynamically load images from the Posters directory
+        // Function to dynamically load images from the JSON file
         function loadPosters() {
-            fetch('Posters')
-                .then(response => response.text())
+            fetch('posters.json')
+                .then(response => response.json())
                 .then(data => {
-                    const parser = new DOMParser();
-                    const html = parser.parseFromString(data, 'text/html');
-                    const posters = html.querySelectorAll('a');
-
-                    posters.forEach(poster => {
-                        const href = poster.getAttribute('href');
-                        if (href.endsWith('.jpg') || href.endsWith('.png')) {
-                            const img = document.createElement('img');
-                            img.src = `Posters/${href}`;
-                            img.alt = href.split('.')[0];
-
-                            const div = document.createElement('div');
-                            div.appendChild(img);
-                            document.getElementById('posterSlider').appendChild(div);
-                        }
+                    const slider = document.getElementById('posterSlider');
+                    data.forEach(poster => {
+                        const div = document.createElement('div');
+                        const img = document.createElement('img');
+                        img.src = poster.src;
+                        img.alt = poster.alt;
+                        div.appendChild(img);
+                        slider.appendChild(div);
                     });
 
                     // Initialize Slick slider after images are loaded
