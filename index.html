@@ -125,7 +125,7 @@
         .poster {
             position: relative;
             display: inline-block;
-            margin: 1px;
+            margin: 5px; /* Adjust this value to change the padding */
         }
 
         .poster img {
@@ -135,7 +135,7 @@
         }
 
         .poster:hover img {
-            opacity: 0.7;
+            opacity: 0.7; /* Adjust this value to change the darkening effect */
         }
 
         .description-overlay {
@@ -144,16 +144,18 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            text-align: left; /* Align text to the left */
             opacity: 0;
             transition: opacity 0.3s;
-            padding: 10px;
+            padding: 20px; /* Add padding for better spacing */
             box-sizing: border-box;
+            font-size: 16px; /* Font size for better readability */
+            line-height: 1.5; /* Line height for better readability */
         }
 
         .poster:hover .description-overlay {
@@ -181,16 +183,16 @@
         .resume-link {
             display: inline-block;
             margin-top: 20px;
-            background: #FF8C00; /* fixed background color */
-            color: #fff; /* fixed text color */
+            background: #FF8C00; /* Orange color */
+            color: #fff; /* Keep text color white */
             padding: 10px 20px;
             border-radius: 5px;
             transition: background 0.3s;
         }
 
         .resume-link:hover {
-            background: #E67300; /* fixed hover background color */
-            color: #fff; /* keep text color same on hover */
+            background: #E67300; /* Darker orange for hover effect */
+            color: #fff; /* Keep text color white */
         }
 
         .about-logo {
@@ -221,6 +223,10 @@
         footer .social-icons a:hover {
             color: var(--link-hover-color);
         }
+    </Continuing the `index.html` file and including the JavaScript to ensure the poster images and descriptions load correctly:
+
+### Updated `index.html` (continued)
+```html
     </style>
 </head>
 <body>
@@ -240,7 +246,7 @@
         <section id="about" class="about">
             <div class="container">
                 <h2>About Me</h2>
-                <p>I am a rigging artist specializing in character rigging, including biped,                quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
+                <p>I am a rigging artist specializing in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. With over seven years of professional experience, I am currently working at Animal Logic in Sydney, Australia.</p>
                 <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
                 <div class="about-logo">
                     <img src="logo/autoRigModules.png" alt="Auto Rig Modules Logo">
@@ -277,6 +283,7 @@
                         img.alt = poster.alt;
                         const overlay = document.createElement('div');
                         overlay.className = 'description-overlay';
+                        overlay.innerHTML = poster.Description.replace(/\n/g, '<br>'); // Replace line breaks with <br>
                         div.appendChild(img);
                         div.appendChild(overlay);
                         slider.appendChild(div);
@@ -315,7 +322,7 @@
                     // Populate descriptions
                     document.querySelectorAll('.poster').forEach(poster => {
                         const description = poster.getAttribute('data-description');
-                        poster.querySelector('.description-overlay').innerText = description;
+                        poster.querySelector('.description-overlay').innerHTML = description;
                     });
                 })
                 .catch(error => console.error('Error loading posters:', error));
@@ -351,4 +358,3 @@
     </script>
 </body>
 </html>
-
