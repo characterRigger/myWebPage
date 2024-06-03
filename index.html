@@ -265,6 +265,13 @@
         // Function to dynamically load images from the JSON file
         function loadPosters() {
             fetch('posters.json')
+                .then(response =>Continuing from where we left off, here's the updated `index.html` to ensure the images load correctly along with descriptions on hover:
+
+```html
+    <script>
+        // Function to dynamically load images from the JSON file
+        function loadPosters() {
+            fetch('posters.json')
                 .then(response => response.json())
                 .then(data => {
                     const slider = document.getElementById('posterSlider');
@@ -273,8 +280,8 @@
                         div.className = 'poster';
                         div.setAttribute('data-description', poster.Description);
                         const img = document.createElement('img');
-                        img.src = poster.image;
-                        img.alt = poster.title;
+                        img.src = poster.src;
+                        img.alt = poster.alt;
                         const overlay = document.createElement('div');
                         overlay.className = 'description-overlay';
                         div.appendChild(img);
@@ -351,4 +358,3 @@
     </script>
 </body>
 </html>
-
