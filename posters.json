@@ -2,36 +2,31 @@
     {
         "src": "Posters/Leo.jpg",
         "alt": "Leo",
-        "Description": "As a rigger on the show i was resposble for:
-        .
-        .
-        .
-        .
-        .."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Creating the character rigging.\n- Ensuring smooth animation transitions.\n- Collaborating with animators to refine movements."
     },
     {
         "src": "Posters/magicians elephants.jpg",
         "alt": "The Magician's Elephant",
-        "Description": "A magical tale about a young boy searching for his sister, guided by a magician's elephant."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Designing complex rigging setups.\n- Integrating with VFX teams.\n- Optimizing rig performance for various scenes."
     },
     {
         "src": "Posters/love and monsters.jpg",
         "alt": "Love and Monsters",
-        "Description": "A post-apocalyptic love story set in a world overrun by monsters."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Developing mechanical and organic rigs.\n- Testing rigs for animation readiness.\n- Providing technical support during production."
     },
     {
         "src": "Posters/cats.jpg",
         "alt": "Cats",
-        "Description": "A musical film adaptation of the famous stage show featuring feline characters."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Implementing facial rigging.\n- Collaborating with the animation team.\n- Ensuring rigs met artistic and technical requirements."
     },
     {
         "src": "Posters/mia and me.jpg",
         "alt": "Mia and Me",
-        "Description": "An enchanting series about a girl who enters a magical world through a portal."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Building rigs for various creatures.\n- Assisting with animation problem-solving.\n- Streamlining the rigging pipeline."
     },
     {
         "src": "Posters/bilal.jpg",
         "alt": "Bilal",
-        "Description": "An animated film inspired by the true story of Bilal Ibn Rabah, a boy who rises against oppression."
+        "Description": "As a rigger, my responsibilities on this project included:\n- Rigging characters for key scenes.\n- Working closely with the modeling department.\n- Ensuring rigs were user-friendly for animators."
     }
 ]
