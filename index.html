@@ -20,7 +20,7 @@
             --link-hover-color: #0056b3;
             --box-shadow-color: rgba(0, 0, 0, 0.1);
             --nav-transparent: rgba(255, 255, 255, 0.8);
-            --logo-highlight-color: orange ; /* Color that pops against white */
+            --logo-highlight-color: orange; /* Color that pops against white */
         }
 
         /* Dark mode */
@@ -33,7 +33,7 @@
             --link-hover-color: #3700b3;
             --box-shadow-color: rgba(255, 255, 255, 0.1);
             --nav-transparent: rgba(26, 26, 26, 0.8); /* Adjusted for darker background */
-            --logo-highlight-color: orange ; /* Color that pops against dark background */
+            --logo-highlight-color: orange; /* Color that pops against dark background */
         }
 
         /* Basic Styling */
@@ -112,10 +112,52 @@
             margin-top: 80px; /* Increased margin-top for more padding */
         }
 
+        .slider {
+            position: relative;
+        }
+
         .slider img {
             width: 100%;
             display: block;
             object-fit: cover;
+        }
+
+        .poster {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .poster img {
+            display: block;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .poster:hover img {
+            opacity: 0.7;
+        }
+
+        .description-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .poster:hover .description-overlay {
+            opacity: 1;
         }
 
         /* About Section */
@@ -228,10 +270,15 @@
                     const slider = document.getElementById('posterSlider');
                     data.forEach(poster => {
                         const div = document.createElement('div');
+                        div.className = 'poster';
+                        div.setAttribute('data-description', poster.Description);
                         const img = document.createElement('img');
-                        img.src = poster.src;
-                        img.alt = poster.alt;
+                        img.src = poster.image;
+                        img.alt = poster.title;
+                        const overlay = document.createElement('div');
+                        overlay.className = 'description-overlay';
                         div.appendChild(img);
+                        div.appendChild(overlay);
                         slider.appendChild(div);
                     });
 
@@ -263,6 +310,12 @@
                                 }
                             }
                         ]
+                    });
+
+                    // Populate descriptions
+                    document.querySelectorAll('.poster').forEach(poster => {
+                        const description = poster.getAttribute('data-description');
+                        poster.querySelector('.description-overlay').innerText = description;
                     });
                 })
                 .catch(error => console.error('Error loading posters:', error));
@@ -298,3 +351,4 @@
     </script>
 </body>
 </html>
+
