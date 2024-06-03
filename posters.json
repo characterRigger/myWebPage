@@ -1,26 +1,32 @@
 [
     {
         "src": "Posters/Leo.jpg",
-        "alt": "Leo"
+        "alt": "Leo",
+        "Description": "An animated adventure following the story of Leo the Lion."
     },
     {
         "src": "Posters/magicians elephants.jpg",
-        "alt": "The Magician's Elephant"
+        "alt": "The Magician's Elephant",
+        "Description": "A magical tale about a young boy searching for his sister, guided by a magician's elephant."
     },
     {
         "src": "Posters/love and monsters.jpg",
-        "alt": "Love and Monsters"
+        "alt": "Love and Monsters",
+        "Description": "A post-apocalyptic love story set in a world overrun by monsters."
     },
     {
         "src": "Posters/cats.jpg",
-        "alt": "Cats"
+        "alt": "Cats",
+        "Description": "A musical film adaptation of the famous stage show featuring feline characters."
     },
     {
         "src": "Posters/mia and me.jpg",
-        "alt": "Mia and Me"
+        "alt": "Mia and Me",
+        "Description": "An enchanting series about a girl who enters a magical world through a portal."
     },
     {
         "src": "Posters/bilal.jpg",
-        "alt": "Bilal"
+        "alt": "Bilal",
+        "Description": "An animated film inspired by the true story of Bilal Ibn Rabah, a boy who rises against oppression."
     }
 ]
