@@ -21,6 +21,9 @@
             --box-shadow-color: rgba(0, 0, 0, 0.1);
             --nav-transparent: rgba(255, 255, 255, 0.8);
             --logo-highlight-color: orange; /* Color that pops against white */
+            --primary-color: #007bff;
+            --secondary-color: #e0e0e0;
+            --background-gradient: linear-gradient(to right, #e0eafc, #cfdef3);
         }
 
         /* Dark mode */
@@ -34,6 +37,9 @@
             --box-shadow-color: rgba(255, 255, 255, 0.1);
             --nav-transparent: rgba(26, 26, 26, 0.8); /* Adjusted for darker background */
             --logo-highlight-color: orange; /* Color that pops against dark background */
+            --primary-color: #bb86fc;
+            --secondary-color: #333;
+            --background-gradient: linear-gradient(to right, #121212, #333);
         }
 
         /* Basic Styling */
@@ -165,32 +171,40 @@
         /* About Section */
         .about {
             padding: 60px 0;
-            background: var(--background-color);
+            background: var(--background-gradient);
             color: var(--text-color);
             text-align: center;
+            background-size: cover;
+            background-position: center;
         }
 
         .about h2 {
             font-size: 36px;
             margin-bottom: 30px;
+            color: var(--primary-color);
         }
 
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            text-align: left;
             line-height: 1.8;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .about-content p {
             margin-bottom: 20px;
             font-size: 18px;
+            color: var(--text-color);
         }
 
         .resume-link {
             display: inline-block;
             margin-top: 30px;
-            background: #FF8C00; /* Orange color */
+            background: var(--primary-color);
             color: #fff;
             padding: 12px 24px;
             border-radius: 5px;
@@ -199,7 +213,7 @@
         }
 
         .resume-link:hover {
-            background: #E67300; /* Darker orange for hover effect */
+            background: var(--link-hover-color);
             color: #fff;
         }
 
