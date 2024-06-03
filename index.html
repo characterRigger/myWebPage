@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <style>
-        /* Root variables */
         :root {
             --background-color: #f9f9f9;
             --text-color: #333;
@@ -20,23 +19,21 @@
             --link-hover-color: #0056b3;
             --box-shadow-color: rgba(0, 0, 0, 0.1);
             --nav-transparent: rgba(255, 255, 255, 0.8);
-            --logo-highlight-color: orange; /* Color that pops against white */
+            --logo-highlight-color: orange;
         }
 
-        /* Dark mode */
         [data-theme="dark"] {
             --background-color: #121212;
             --text-color: #e0e0e0;
-            --nav-background: #1a1a1a; /* Darker color for nav and footer */
+            --nav-background: #1a1a1a;
             --nav-text-color: #e0e0e0;
             --link-color: #bb86fc;
             --link-hover-color: #3700b3;
             --box-shadow-color: rgba(255, 255, 255, 0.1);
-            --nav-transparent: rgba(26, 26, 26, 0.8); /* Adjusted for darker background */
-            --logo-highlight-color: orange; /* Color that pops against dark background */
+            --nav-transparent: rgba(26, 26, 26, 0.8);
+            --logo-highlight-color: orange;
         }
 
-        /* Basic Styling */
         body {
             font-family: 'Arial', sans-serif;
             background-color: var(--background-color);
@@ -62,7 +59,6 @@
             max-width: 1200px;
         }
 
-        /* Navbar */
         nav {
             background: var(--nav-background);
             color: var(--nav-text-color);
@@ -100,16 +96,14 @@
             color: var(--nav-text-color);
         }
 
-        /* Dark mode toggle button */
         .theme-toggle {
             cursor: pointer;
             font-size: 24px;
             color: var(--nav-text-color);
         }
 
-        /* Slider */
         .slider-container {
-            margin-top: 80px; /* Increased margin-top for more padding */
+            margin-top: 80px;
         }
 
         .slider {
@@ -125,7 +119,7 @@
         .poster {
             position: relative;
             display: inline-block;
-            margin: 1px; /* Adjust this value to change the padding */
+            margin: 1px;
         }
 
         .poster img {
@@ -135,7 +129,7 @@
         }
 
         .poster:hover img {
-            opacity: 0.7; /* Adjust this value to change the darkening effect */
+            opacity: 0.7;
         }
 
         .description-overlay {
@@ -144,55 +138,54 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: left; /* Align text to the left */
+            text-align: left;
             opacity: 0;
             transition: opacity 0.3s;
-            padding: 20px; /* Add padding for better spacing */
+            padding: 20px;
             box-sizing: border-box;
-            font-size: 16px; /* Font size for better readability */
-            line-height: 1.5; /* Line height for better readability */
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .poster:hover .description-overlay {
             opacity: 1;
         }
 
-        /* About Section */
-        .about {
-            padding: 30px 0;
+        .about, .professional, .ngo {
+            padding: 50px 0;
             background: var(--background-color);
             color: var(--text-color);
             text-align: center;
         }
 
-        .about h2 {
+        .about h2, .professional h2, .ngo h2 {
             font-size: 36px;
             margin-bottom: 20px;
         }
 
-        .about p {
+        .about p, .professional p, .ngo p {
             font-size: 18px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .resume-link {
             display: inline-block;
             margin-top: 20px;
-            background: #FF8C00; /* Orange color */
-            color: #fff; /* Keep text color white */
+            background: #FF8C00;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background 0.3s;
         }
 
         .resume-link:hover {
-            background: #E67300; /* Darker orange for hover effect */
-            color: #fff; /* Keep text color white */
+            background: #E67300;
+            color: #fff;
         }
 
         .about-logo {
@@ -200,11 +193,10 @@
         }
 
         .about-logo img {
-            max-width: 250px; /* Increased max-width for larger logo */
+            max-width: 250px;
             height: auto;
         }
 
-        /* Footer */
         footer {
             background: var(--nav-background);
             color: var(--nav-text-color);
@@ -251,14 +243,13 @@
                 </div>
             </div>
         </section>
-        <section id="professional" class="about">
+        <section id="professional" class="professional">
             <div class="container">
                 <h2>Professional Life</h2>
-                <```html
                 <p>I am a dedicated rigging artist with over seven years of experience, specializing in character rigging for films, commercials, and video games. My expertise spans biped, quadruped, bird, reptile, creature, and mechanical rigging. Currently, I am proud to be part of the team at Animal Logic in Sydney, Australia.</p>
             </div>
         </section>
-        <section id="ngo" class="about">
+        <section id="ngo" class="ngo">
             <div class="container">
                 <h2>Co-founder of Global Refugee Academy</h2>
                 <p>Beyond my professional achievements, I am deeply committed to supporting refugees. This dedication led to co-founding the Global Refugee Academy, a non-profit organization aimed at breaking educational barriers for displaced communities worldwide. Through this initiative, I advocate for refugees, helping them navigate their new lives and offering them opportunities for growth and integration.</p>
@@ -298,7 +289,7 @@
                         img.alt = poster.alt;
                         const overlay = document.createElement('div');
                         overlay.className = 'description-overlay';
-                        overlay.innerHTML = poster.Description.replace(/\n/g, '<br>'); // Replace line breaks with <br>
+                        overlay.innerHTML = poster.Description.replace(/\n/g, '<br>');
                         div.appendChild(img);
                         div.appendChild(overlay);
                         slider.appendChild(div);
@@ -363,10 +354,10 @@
             toggleButton.addEventListener('click', () => {
                 if (body.hasAttribute('data-theme')) {
                     body.removeAttribute('data-theme');
-                    toggleButton.innerHTML = '&#9788;'; // Sun icon
+                    toggleButton.innerHTML = '&#9788;';
                 } else {
                     body.setAttribute('data-theme', 'dark');
-                    toggleButton.innerHTML = '&#9790;'; // Moon icon
+                    toggleButton.innerHTML = '&#9790;';
                 }
             });
         });
