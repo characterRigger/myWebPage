@@ -21,9 +21,6 @@
             --box-shadow-color: rgba(0, 0, 0, 0.1);
             --nav-transparent: rgba(255, 255, 255, 0.8);
             --logo-highlight-color: orange; /* Color that pops against white */
-            --primary-color: #007bff;
-            --secondary-color: #e0e0e0;
-            --background-gradient: linear-gradient(to right, #e0eafc, #cfdef3);
         }
 
         /* Dark mode */
@@ -37,9 +34,6 @@
             --box-shadow-color: rgba(255, 255, 255, 0.1);
             --nav-transparent: rgba(26, 26, 26, 0.8); /* Adjusted for darker background */
             --logo-highlight-color: orange; /* Color that pops against dark background */
-            --primary-color: #bb86fc;
-            --secondary-color: #333;
-            --background-gradient: linear-gradient(to right, #121212, #333);
         }
 
         /* Basic Styling */
@@ -171,17 +165,14 @@
         /* About Section */
         .about {
             padding: 60px 0;
-            background: var(--background-gradient);
+            background: var(--background-color);
             color: var(--text-color);
             text-align: center;
-            background-size: cover;
-            background-position: center;
         }
 
         .about h2 {
             font-size: 36px;
             margin-bottom: 30px;
-            color: var(--primary-color);
         }
 
         .about-content {
@@ -189,22 +180,17 @@
             margin: 0 auto;
             text-align: left;
             line-height: 1.8;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .about-content p {
             margin-bottom: 20px;
             font-size: 18px;
-            color: var(--text-color);
         }
 
         .resume-link {
             display: inline-block;
             margin-top: 30px;
-            background: var(--primary-color);
+            background: #FF8C00; /* Orange color */
             color: #fff;
             padding: 12px 24px;
             border-radius: 5px;
@@ -213,7 +199,7 @@
         }
 
         .resume-link:hover {
-            background: var(--link-hover-color);
+            background: #E67300; /* Darker orange for hover effect */
             color: #fff;
         }
 
@@ -266,7 +252,8 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <p>Hello, my name is Barat Ali. Here is a glimpse into my personal and professional journey so far.</p>
-                    <p>I was born in an isolated village in Afghanistan during the civil war, with no access to hospitals. My early life was marked by significant challenges, including a battle with polio. Despite these obstacles, I refused to let them define me. Instead, I turned them into sources of strength. At the age of 16, I arrived in Australia as a refugee. This was a turning point in my life, opening the door to new opportunities. I embraced this chance and pursued my education, eventually earning a Bachelor of Animation from Griffith University.</p>
+                    <p>I was born in an isolated village in Afghanistan during the civil war, with no access to hospitals. My early life was marked by significant challenges, including a battle with polio. Despite these obstacles, I refused to let them define me. Instead, I turned them into sources of strength.</p>
+                    <p>At the age of 16, I arrived in Australia as a refugee. This was a turning point in my life, opening the door to new opportunities. I embraced this chance and pursued my education, eventually earning a Bachelor of Animation from Griffith University.</p>
                     <p>Breaking into the film industry as a Rigger was more than just a career choice for me. From the war-torn landscapes of my homeland to the creative spaces of renowned companies like Animal Logic, my journey has been one of resilience and passion.</p>
                     <p>With over seven years of experience, I specialize in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. I am currently working at Animal Logic in Sydney, Australia.</p>
                 </div>
