@@ -164,7 +164,7 @@
 
         /* About Section */
         .about {
-            padding: 30px 0;
+            padding: 60px 0;
             background: var(--background-color);
             color: var(--text-color);
             text-align: center;
@@ -172,35 +172,43 @@
 
         .about h2 {
             font-size: 36px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .about p {
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
             font-size: 18px;
-            margin-bottom: 40px;
         }
 
         .resume-link {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
             background: #FF8C00; /* Orange color */
-            color: #fff; /* Keep text color white */
-            padding: 10px 20px;
+            color: #fff;
+            padding: 12px 24px;
             border-radius: 5px;
             transition: background 0.3s;
+            font-size: 18px;
         }
 
         .resume-link:hover {
             background: #E67300; /* Darker orange for hover effect */
-            color: #fff; /* Keep text color white */
+            color: #fff;
         }
 
         .about-logo {
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .about-logo img {
-            max-width: 250px; /* Increased max-width for larger logo */
+            max-width: 250px;
             height: auto;
         }
 
@@ -242,18 +250,19 @@
         <section id="about" class="about">
             <div class="container">
                 <h2>About Me</h2>
-                <p>Hello, my name is Barat Ali. Here is a glimpse into my personal and professional journey so far.</p>
-                <p>I was born in an isolated village in Afghanistan during the civil war, with no access to hospitals. My early life was marked by significant challenges, including a battle with polio. Despite these obstacles, I refused to let them define me. Instead, I turned them into sources of strength.</p>
-                <p>At the age of 16, I arrived in Australia as a refugee. This was a turning point in my life, opening the door to new opportunities. I embraced this chance and pursued my education, eventually earning a Bachelor of Animation from Griffith University.</p>
-                <p>Breaking into the film industry as a Rigger was more than just a career choice for me. From the war-torn landscapes of my homeland to the creative spaces of renowned companies like Animal Logic, my journey has been one of resilience and passion.</p>
-                <p>With over seven years of experience, I specialize in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. I am currently working at Animal Logic in Sydney, Australia.</p>
+                <div class="about-content">
+                    <p>Hello, my name is Barat Ali. Here is a glimpse into my personal and professional journey so far.</p>
+                    <p>I was born in an isolated village in Afghanistan during the civil war, with no access to hospitals. My early life was marked by significant challenges, including a battle with polio. Despite these obstacles, I refused to let them define me. Instead, I turned them into sources of strength.</p>
+                    <p>At the age of 16, I arrived in Australia as a refugee. This was a turning point in my life, opening the door to new opportunities. I embraced this chance and pursued my education, eventually earning a Bachelor of Animation from Griffith University.</p>
+                    <p>Breaking into the film industry as a Rigger was more than just a career choice for me. From the war-torn landscapes of my homeland to the creative spaces of renowned companies like Animal Logic, my journey has been one of resilience and passion.</p>
+                    <p>With over seven years of experience, I specialize in character rigging, including biped, quadruped, bird, reptile, creature, and mechanical rigging for films, commercials, and video games. I am currently working at Animal Logic in Sydney, Australia.</p>
+                </div>
                 <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
                 <div class="about-logo">
                     <img src="logo/autoRigModules.png" alt="Auto Rig Modules Logo">
                 </div>
             </div>
         </section>
-
     </main>
     <footer>
         <div class="container">
