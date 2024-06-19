@@ -241,9 +241,9 @@
             transform-origin: center;
             transition: transform 0.3s ease;
             display: flex;
-            flex-wrap: wrap;
-            width: 800px; /* Adjust width for the arrangement */
-            height: 400px; /* Adjust height for the arrangement */
+            justify-content: space-between;
+            width: 100%; /* Adjust width for the arrangement */
+            max-width: 800px; /* Maximum width */
             pointer-events: none; /* To avoid interfering with hover */
             z-index: 5;
         }
@@ -251,7 +251,7 @@
         .about-logo .image-display img {
             width: 150px;
             height: 200px;
-            margin: 10px;
+            margin: 0 10px;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
@@ -325,8 +325,6 @@
                         <img src="logo/image4.png" alt="Image 4">
                         <img src="logo/image5.png" alt="Image 5">
                         <img src="logo/image6.png" alt="Image 6">
-                        <img src="logo/image7.png" alt="Image 7">
-                        <img src="logo/image8.png" alt="Image 8">
                     </div>
                 </div>
             </div>
