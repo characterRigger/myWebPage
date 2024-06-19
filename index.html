@@ -246,6 +246,89 @@
         footer .social-icons a:hover {
             color: var(--link-hover-color);
         }
+
+        /* Equivalent of QGroupBox */
+        .group-box {
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .group-box-title {
+            text-align: center;
+            padding: 0 3px;
+            margin-top: -10px; /* To position the title within the border */
+            background-color: #fff; /* Background color of the title */
+            display: inline-block;
+            padding: 0 5px;
+        }
+
+        /* Equivalent of QPushButton */
+        button {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #444; /* Default button color */
+            color: white;
+        }
+
+        button:hover:enabled {
+            background-color: #555; /* Darker color on hover */
+        }
+
+        button:disabled {
+            background-color: #666; /* Different color when disabled */
+            color: #999;
+        }
+
+        button.important {
+            height: 40px; /* Increase the height for important buttons */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Equivalent of QMenuBar */
+        .menu-bar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu-bar-item {
+            background: #333;
+            color: #fff;
+        }
+
+        .menu-bar-item:hover {
+            background: #555;
+        }
+
+        /* Equivalent of QMenu */
+        .menu {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+        }
+
+        /* Equivalent of QProgressBar */
+        progress {
+            width: 100%;
+            height: 20px;
+            text-align: center; /* Not typically supported directly in HTML/CSS progress bars */
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #ccc;
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #009688;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: #009688;
+        }
     </style>
 </head>
 <body data-theme="dark">
