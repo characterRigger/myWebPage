@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barat Ali - Character Rigger</title>
-    <meta name="description" content="Barat Ali is a professional rigging artist specializing in character rigging for films, commercials, and video games.">
-    <meta name="keywords" content="character rigging, rigging artist, animation, 3D rigging, Barat Ali, films, commercials, video games">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -220,11 +218,54 @@
 
         .about-logo {
             margin-top: 40px;
+            position: relative;
         }
 
-        .about-logo img {
-            max-width: 250px;
-            height: auto;
+        .about-logo .logo-container {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+        }
+
+        .about-logo .logo-container img {
+            display: block;
+        }
+
+        .about-logo .image-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px; /* Adjust width for the arrangement */
+            height: 400px; /* Adjust height for the arrangement */
+            pointer-events: none; /* To avoid interfering with hover */
+            z-index: 5;
+        }
+
+        .about-logo .image-display img {
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .about-logo .logo-container:hover + .image-display {
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+
+        .about-logo .image-display img {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .about-logo .logo-container:hover + .image-display img {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* Footer */
@@ -245,89 +286,6 @@
 
         footer .social-icons a:hover {
             color: var(--link-hover-color);
-        }
-
-        /* Equivalent of QGroupBox */
-        .group-box {
-            border: 1px solid gray;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .group-box-title {
-            text-align: center;
-            padding: 0 3px;
-            margin-top: -10px; /* To position the title within the border */
-            background-color: #fff; /* Background color of the title */
-            display: inline-block;
-            padding: 0 5px;
-        }
-
-        /* Equivalent of QPushButton */
-        button {
-            border: 1px solid gray;
-            border-radius: 5px;
-            padding: 5px;
-            background-color: #444; /* Default button color */
-            color: white;
-        }
-
-        button:hover:enabled {
-            background-color: #555; /* Darker color on hover */
-        }
-
-        button:disabled {
-            background-color: #666; /* Different color when disabled */
-            color: #999;
-        }
-
-        button.important {
-            height: 40px; /* Increase the height for important buttons */
-            font-weight: bold; /* Make the text bold */
-        }
-
-        /* Equivalent of QMenuBar */
-        .menu-bar {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .menu-bar-item {
-            background: #333;
-            color: #fff;
-        }
-
-        .menu-bar-item:hover {
-            background: #555;
-        }
-
-        /* Equivalent of QMenu */
-        .menu {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .menu-item:hover {
-            background-color: #555;
-        }
-
-        /* Equivalent of QProgressBar */
-        progress {
-            width: 100%;
-            height: 20px;
-            text-align: center; /* Not typically supported directly in HTML/CSS progress bars */
-        }
-
-        progress::-webkit-progress-bar {
-            background-color: #ccc;
-        }
-
-        progress::-webkit-progress-value {
-            background-color: #009688;
-        }
-
-        progress::-moz-progress-bar {
-            background-color: #009688;
         }
     </style>
 </head>
@@ -355,7 +313,19 @@
                 </div>
                 <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
                 <div class="about-logo">
-                    <img src="logo/autoRigModules.png" alt="Auto Rig Modules Logo">
+                    <div class="logo-container">
+                        <img src="logo/autoRigModules.png" alt="Auto Rig Modules Logo">
+                    </div>
+                    <div class="image-display">
+                        <img src="logo/image1.png" alt="Image 1">
+                        <img src="logo/image2.png" alt="Image 2">
+                        <img src="logo/image3.png" alt="Image 3">
+                        <img src="logo/image4.png" alt="Image 4">
+                        <img src="logo/image5.png" alt="Image 5">
+                        <img src="logo/image6.png" alt="Image 6">
+                        <img src="logo/image7.png" alt="Image 7">
+                        <img src="logo/image8.png" alt="Image 8">
+                    </div>
                 </div>
             </div>
         </section>
