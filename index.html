@@ -239,7 +239,7 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
             transform-origin: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
             display: flex;
             justify-content: space-between;
             width: 100%; /* Adjust width for the arrangement */
@@ -249,10 +249,11 @@
         }
 
         .about-logo .image-display img {
-            width: 150px;
-            height: 200px;
-            margin: 0 10px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            width: 100px;
+            height: 150px;
+            margin: 0 -30px; /* Overlap the images */
+            opacity: 0.6; /* Add transparency */
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
         .about-logo .logo-container:hover + .image-display {
@@ -261,12 +262,37 @@
         }
 
         .about-logo .image-display img {
-            transform: translateY(20px);
+            transform: translateX(0);
             opacity: 0;
         }
 
-        .about-logo .logo-container:hover + .image-display img {
-            transform: translateY(0);
+        .about-logo .logo-container:hover + .image-display img:nth-child(1) {
+            transform: translateX(-250px); /* Adjust for the left slide */
+            opacity: 1;
+        }
+
+        .about-logo .logo-container:hover + .image-display img:nth-child(2) {
+            transform: translateX(-200px); /* Adjust for the left slide */
+            opacity: 1;
+        }
+
+        .about-logo .logo-container:hover + .image-display img:nth-child(3) {
+            transform: translateX(-150px); /* Adjust for the left slide */
+            opacity: 1;
+        }
+
+        .about-logo .logo-container:hover + .image-display img:nth-child(4) {
+            transform: translateX(150px); /* Adjust for the right slide */
+            opacity: 1;
+        }
+
+        .about-logo .logo-container:hover + .image-display img:nth-child(5) {
+            transform: translateX(200px); /* Adjust for the right slide */
+            opacity: 1;
+        }
+
+        .about-logo .logo-container:hover + .image-display img:nth-child(6) {
+            transform: translateX(250px); /* Adjust for the right slide */
             opacity: 1;
         }
 
@@ -422,7 +448,7 @@
             const body = document.body;
 
             toggleButton.addEventListener('click', () => {
-                if (body.hasAttribute('data-theme')) {
+                if (body hasAttribute('data-theme')) {
                     body.removeAttribute('data-theme');
                     toggleButton.innerHTML = '&#9788;'; // Sun icon
                 } else {
