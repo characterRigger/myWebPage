@@ -98,6 +98,7 @@
             color: var(--logo-highlight-color);
         }
 
+        /* Logo size */
         nav .logo img {
             width: 150px; /* Adjust width as needed */
             height: auto; /* Maintain aspect ratio */
@@ -340,7 +341,7 @@
     <nav id="navbar">
         <div class="container">
             <div class="logo">
-                <img id="logo-img" src="https://raw.githubusercontent.com/characterRigger/myWebPage/main/Logo/whilteLogo.png" alt="Logo">
+                <img id="logo-img" src="Logo/whilteLogo.png" alt="Logo">
             </div>
             <div class="menu"></div>
             <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</div>
@@ -362,7 +363,7 @@
                 </div>
                 <a href="Resume/Barat_Ali_Resume.pdf" class="resume-link" download>Download My Resume</a>
                 <div class="about-logo">
-                    <img src="logo/autoRigModules.png" alt="Auto Rig Modules Logo">
+                    <img src="Logo/autoRigModules.png" alt="Auto Rig Modules Logo">
                 </div>
             </div>
         </section>
@@ -463,11 +464,11 @@
                 if (body.hasAttribute('data-theme')) {
                     body.removeAttribute('data-theme');
                     toggleButton.innerHTML = '&#9788;'; // Sun icon
-                    logoImg.src = 'https://raw.githubusercontent.com/characterRigger/myWebPage/main/Logo/blackLogo.png'; // Set the logo to black
+                    logoImg.src = 'Logo/blackLogo.png'; // Set the logo to black
                 } else {
                     body.setAttribute('data-theme', 'dark');
                     toggleButton.innerHTML = '&#9790;'; // Moon icon
-                    logoImg.src = 'https://raw.githubusercontent.com/characterRigger/myWebPage/main/Logo/whilteLogo.png'; // Set the logo to white
+                    logoImg.src = 'Logo/whilteLogo.png'; // Set the logo to white
                 }
             });
         });
