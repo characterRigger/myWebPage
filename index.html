@@ -334,7 +334,9 @@
 <body data-theme="dark">
     <nav id="navbar">
         <div class="container">
-            <div class="logo"><span class="highlight">B</span>A<span class="highlight">R</span>A<span class="highlight">T</span></div>
+            <div class="logo">
+                <img id="logo-img" src="logo/whilteLogo.png" alt="Logo">
+            </div>
             <div class="menu"></div>
             <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</div>
         </div>
@@ -450,14 +452,17 @@
             // Toggle dark and light mode
             const toggleButton = document.getElementById('theme-toggle');
             const body = document.body;
+            const logoImg = document.getElementById('logo-img');
 
             toggleButton.addEventListener('click', () => {
                 if (body.hasAttribute('data-theme')) {
                     body.removeAttribute('data-theme');
                     toggleButton.innerHTML = '&#9788;'; // Sun icon
+                    logoImg.src = 'logo/blackLogo.png'; // Set the logo to black
                 } else {
                     body.setAttribute('data-theme', 'dark');
                     toggleButton.innerHTML = '&#9790;'; // Moon icon
+                    logoImg.src = 'logo/whilteLogo.png'; // Set the logo to white
                 }
             });
         });
